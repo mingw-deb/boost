@@ -1,0 +1,27 @@
+From 2672f87c200f8045e63b2f4d4467736e90292108 Mon Sep 17 00:00:00 2001
+From: Tobias Schlemmer <keinstein@users.sourceforge.net>
+Date: Tue, 2 Jan 2018 20:00:50 +0100
+Subject: Fix comments in man module
+
+---
+ tools/build/src/tools/types/man.jam | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/tools/build/src/tools/types/man.jam b/tools/build/src/tools/types/man.jam
+index 7dc9cb3..2eff484 100644
+--- a/tools/build/src/tools/types/man.jam
++++ b/tools/build/src/tools/types/man.jam
+@@ -1,8 +1,8 @@
+ #|
+-Copyright 2017 Rene Rivera
+-Distributed under the Boost Software License, Version 1.0. (See
+-accompanying file LICENSE_1_0.txt or copy at
+-http://www.boost.org/LICENSE_1_0.txt)
+-|#
++#Copyright 2017 Rene Rivera
++#Distributed under the Boost Software License, Version 1.0. (See
++#accompanying file LICENSE_1_0.txt or copy at
++#http://www.boost.org/LICENSE_1_0.txt)
++#|#
+ 
+ type MANPAGE : man 0 1 1M 2 3 4 5 6 7 8 9 n p x ;
