@@ -1,0 +1,5 @@
+mingw-w64-boost (1.66.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Tobias Schlemmer <tobias@tobias5>  Tue, 02 Jan 2018 18:32:32 +0100
