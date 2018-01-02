@@ -1,9 +1,9 @@
 #|
-Copyright 2017 Dmitry Arkhipov
-Distributed under the Boost Software License, Version 1.0. (See
-accompanying file LICENSE_1_0.txt or copy at
-http://www.boost.org/LICENSE_1_0.txt)
-|#
+#Copyright 2017 Dmitry Arkhipov
+#Distributed under the Boost Software License, Version 1.0. (See
+#accompanying file LICENSE_1_0.txt or copy at
+#http://www.boost.org/LICENSE_1_0.txt)
+#|#
 
 import common ;
 import feature ;
@@ -13,39 +13,39 @@ import sequence ;
 import toolset ;
 import "class" : new ;
 
-#| tag::doc[]
-
-= Sass
-
-This tool converts SASS and SCSS files into CSS. This tool explicitly supports
-both the version written in C (sassc) and the original Ruby implementation
-(scss) but other variants might also work.  In addition to tool-specific
-features, described in this section, the tool recognizes features `<flags>`
-and `<include>`.
-
-|# # end::doc[]
+##| tag::doc[]
+#
+#= Sass
+#
+#This tool converts SASS and SCSS files into CSS. This tool explicitly supports
+#both the version written in C (sassc) and the original Ruby implementation
+#(scss) but other variants might also work.  In addition to tool-specific
+#features, described in this section, the tool recognizes features `<flags>`
+#and `<include>`.
+#
+#|# # end::doc[]
 
 feature.feature sass : : implicit propagated symmetric ;
 
 #| tag::doc[]
-
-== Feature: `sass-style`
-
-Sets the output style. Available values are
-
-* `nested`: each property is put on its own line, rules are indented based on
-  how deeply they are nested;
-* `expanded`: each property is put on its own line, rules are not indented;
-* `compact`: each rule is put on a single line, nested rules occupy adjacent
-  lines, while groups of unrelated rules are separated by newlines;
-* `compressed`: takes minimum amount of space: all unnecessary whitespace is
-  removed, property values are compressed to have minimal representation.
-
-The feature is `optional` and is not `propagated` to dependent targets. If no
-style is specified, then, if property set contains property `<optimization>on`,
-`compressed` style is selected.  Otherwise, `nested` style is selected.
-
-|# # end::doc[]
+#
+#== Feature: `sass-style`
+#
+#Sets the output style. Available values are
+#
+#* `nested`: each property is put on its own line, rules are indented based on
+#  how deeply they are nested;
+#* `expanded`: each property is put on its own line, rules are not indented;
+#* `compact`: each rule is put on a single line, nested rules occupy adjacent
+#  lines, while groups of unrelated rules are separated by newlines;
+#* `compressed`: takes minimum amount of space: all unnecessary whitespace is
+#  removed, property values are compressed to have minimal representation.
+#
+#The feature is `optional` and is not `propagated` to dependent targets. If no
+#style is specified, then, if property set contains property `<optimization>on`,
+#`compressed` style is selected.  Otherwise, `nested` style is selected.
+#
+#|# # end::doc[]
 
 feature.subfeature sass
     : style
@@ -54,37 +54,37 @@ feature.subfeature sass
     ;
 
 #| tag::doc[]
-
-== Feature: `sass-line-numbers`
-
-Enables emitting comments showing original line numbers for rules. This can be
-useful for debugging a stylesheet. Available values are `on` and `off`. The
-feature is `optional` and is not `propagated` to dependent targets. If no value
-for this feature is specified, then one is copied from the feature
-`debug-symbols`.
-
-|# end::doc[]
+#
+#== Feature: `sass-line-numbers`
+#
+#Enables emitting comments showing original line numbers for rules. This can be
+#useful for debugging a stylesheet. Available values are `on` and `off`. The
+#feature is `optional` and is not `propagated` to dependent targets. If no value
+#for this feature is specified, then one is copied from the feature
+#`debug-symbols`.
+#
+#|# end::doc[]
 
 feature.subfeature sass : line-numbers : on off : optional ;
 
 #| tag::doc[]
-
-== Initialization
-
-To use the `sass` tool you need to declare it in a configuration file with the
-`using` rule. The initialization takes the following arguments:
-
-* `command`: the command, with any extra arguments, to execute.
-
-For example you could insert the following in your `user-config.jam`:
-
-```
-using sass : /usr/local/bin/psass -p2 ; # Perl libsass-based version
-```
-
-If no `command` is given, `sassc` is tried, after which `scss` is tried.
-
-|# # end::doc[]
+#
+#== Initialization
+#
+#To use the `sass` tool you need to declare it in a configuration file with the
+#`using` rule. The initialization takes the following arguments:
+#
+#* `command`: the command, with any extra arguments, to execute.
+#
+#For example you could insert the following in your `user-config.jam`:
+#
+#```
+#using sass : /usr/local/bin/psass -p2 ; # Perl libsass-based version
+#```
+#
+#If no `command` is given, `sassc` is tried, after which `scss` is tried.
+#
+#|# # end::doc[]
 
 rule init ( command * )
 {
