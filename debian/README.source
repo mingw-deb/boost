@@ -1,10 +1,8 @@
 mingw-w64-boost for Debian
 -------------------------
 
-<this file describes information about the source package, see Debian policy
-manual section 4.14. You WILL either need to modify or delete this file>
+This package is a migration of the corresponding arch linux package. See there for further information.
 
 
-
- -- Tobias Schlemmer <tobias@tobias5>  Tue, 02 Jan 2018 18:32:32 +0100
+ -- Tobias Schlemmer <keinstein@users.sourceforge.net>, Thu,  4 Jan 2018 14:29:18 +0100
 

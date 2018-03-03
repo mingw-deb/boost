@@ -1,22 +1,30 @@
 Source: mingw-w64-boost
 Priority: optional
-Maintainer: Tobias Schlemmer <tobias@tobias5>
-Build-Depends: debhelper (>= 9)
-Standards-Version: 3.9.8
+Maintainer: Tobias Schlemmer <keinstein@users.sourceforge.net>
+Build-Depends: debhelper (>= 9),
+	       libz-mingw-w64-dev,
+	       libbz2-mingw-w64-dev,
+	       wget	       
+Build-Depends-Indep: gcc-mingw-w64, g++-mingw-w64 (>= 1.7.1)
+Standards-Version: 4.1.1
 Section: libs
-Homepage: <insert the upstream URL, if relevant>
+Homepage: http://www.boost.org/
 #Vcs-Git: https://anonscm.debian.org/collab-maint/mingw-w64-boost.git
 #Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/mingw-w64-boost.git
 
-Package: mingw-w64-boost-dev
+Package: boost-mingw-w64-dev
 Section: libdevel
+Multi-Arch: same
 Architecture: any
-Depends: mingw-w64-boostBROKEN (= ${binary:Version}), ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
-
-Package: mingw-w64-boostBROKEN
+Depends: boost1-mingw-w64 (= ${binary:Version}), ${misc:Depends}
+Description: Free peer-reviewed portable C++ source libraries (mingw-w64), development files 
+ This package contains the headers and build supporting libs.
+ 
+Package: boost1-mingw-w64
+Multi-Arch: same
+Section: libs
 Architecture: any
+Pre-Depends: multiarch-support
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: Free peer-reviewed portable C++ source libraries (mingw-w64) runtime library
+ This package contains the runtime DLLs of the boost library.
